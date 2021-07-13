@@ -1,0 +1,4 @@
+<?php
+$mysqli_connection =new mysqli("localhost","root","","climate");
+$mysqli_connection->querry("CREATE TABLE districts(ID INT(11) NOT NULL AUTO_INCREMENT,PRIMARY KEY(ID),NAME VARCHAR(30) NOT NULL UNIQUE)");
+$members_table = $mysqli_connection->querry("CREATE TABLE members(ID INT(11) NOT NULL AUTO_INCREMENT,PRIMARY KEY(ID), NAME VARCHAR(30) NOT NULL , PASSWORD VARCHAR(100) NOT NULL, EMAIL_ADDRESS VARCHAR(20) NOT NULL UNIQUE, DISTRICTS_ID INT(11) NOT NULL,FOREIGN KEY(DISTRICTS_ID) REFERENCES districts_id)");
